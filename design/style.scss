@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+@mixin colors($val){
+    @if $val == cyancolor{
+        color: hsl(179, 62%, 43%);
+    }
+
+    @else if $val == brightYellow{
+        color: hsl(71, 73%, 54%);
+
+    }
+    @else if $val == liteGray{
+        color: hsl(204, 43%, 93%);
+      
+    }
+    @else if $val == grayishBlue{
+        color: hsl(218, 22%, 67%);
+    }
+}
+
+*{
+    box-sizing: border-box;
+}
+
+@mixin make-bold($bold){
+    @if $bold == lightBold{
+        font-weight: 400
+    }
+    @else if $bold == heavyBold{
+        font-weight: 700
+    }
+}
+
+body{
+    margin-top: 50px;
+    font-size: 16px;
+    font-family: 'karla' , sans-serif;
+    background-color: #EEF2F7;
+}
+
+.container{
+    width: 600px;
+    // height: 350px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: auto;
+ 
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+    background-color: #fff;
+    .top-section{
+
+        width: 600px;
+        padding: 30px;
+        height: 250px;
+        h2{
+            @include colors(cyancolor);
+        }
+        h3{
+            @include colors(brightYellow);
+        }
+        p{
+            @include colors(grayishBlue);
+            @include make-bold(heavyBold);
+            font-size: 15px;
+            line-height: 30px;
+        }
+    }
+
+    .base-section{
+        width: 600px;
+        height: 250px;
+        display: flex;
+        flex-direction: row;
+        color: #fff;
+
+        .sub{
+            padding: 20px;
+            background-color: hsl(179, 62%, 43%);
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            border-bottom-left-radius: 9px;
+            p{
+                margin-top: 0px;
+                display: flex;
+                align-items: center;
+            }
+
+            span{
+                font-size: 30px;
+                margin-right: 10px;
+            }           
+
+            #sign-up{
+                background-color: hsl(71, 73%, 54%);
+                outline: none;
+                margin-top: 15px;
+                padding:10px;
+                border-radius: 5px;
+                border: none;
+                color: #fff;
+                box-shadow: 5px 8px 6px -6px black;
+            }
+
+            #sign-up:hover{
+                background-color: hsl(71, 92%, 61%);
+            }
+        }
+
+        .why-us{
+            padding: 10px 30px;
+            background-color: hsl(179, 78%, 58%);
+            width: 300px;
+            border-bottom-right-radius: 9px;
+           
+            ul li{
+                list-style: none;
+                font-size: 14px;
+                line-height: 20px;
+                color: rgb(235, 235, 235);
+                margin-left: -10px;
+            }
+        }
+    }
+}
+
+
+@media(max-width: 700px){
+    .container{
+        width: 300px;
+        height: 700px;
+        align-items: center;
+        
+
+        .top-section{
+            width: 300px;
+            padding: 10px 25px;
+            display: flex;
+            flex-direction: column;
+            p, h2, h3{
+                margin-block: 8px;
+            }
+            p{
+                line-height: 30px;
+            }
+        }
+
+        .base-section{
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .sub{
+                padding: 10px 25px;
+                border-radius: 0px;
+                width: 300px;  
+                #sign-up{
+                    width: 250px;
+                }          
+            }
+
+            .why-us{
+                padding: 10px 25px;
+                width: 300px;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                h3{
+                    margin-left: 20px;
+                }
+                ul li{
+                    margin-left: -20px;
+                }
+            }
+        }
+    }
+}
+
+footer{
+    text-align: center;
+}
