@@ -2,6 +2,8 @@
 
 ![Design preview for the Single Price Grid Component coding challenge](desktop-preview.jpg)
 
+Here's a link to my completed [challenge](https://pricing-grid-component.netlify.app)
+
 ## Welcome! 👋
 
 Thanks for checking out this front-end coding challenge.
